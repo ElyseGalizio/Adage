@@ -2,6 +2,23 @@
     box-sizing: border-box;
   }
 
+:root {
+    --eggshell: #F9F7F7;
+    --light-blue: #DBE2EF;
+    --mid-blue: #3F72AF;
+    --dark-blue: #112D4E;
+}
+
+body {
+    background: var(--eggshell);
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: var(--dark-blue)
+}
+
 ul {
     list-style-type: none;
     padding: 0; 
@@ -9,18 +26,22 @@ ul {
 
 a {
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: var(--mid-blue);
 }
 
 .navbar {
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
 }
 
 .nav-link-list {
     display: flex;
-    justify-content: flex-end;
-    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
 }
 
 
