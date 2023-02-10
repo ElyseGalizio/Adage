@@ -50,34 +50,134 @@ a {
     height: 65vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
 
-#quotes-diplay {
+#quote-container {
     background-color: #6096B4;
+    display:table; /*Put display as a table to extend the container if quote is too long*/
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: absolute;
     height: 40vh;
     width: 70%;
     border-radius: 50px;
-    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+#text-area{
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10%;
 }
 
-.quote, .author{
+.quote-text, .author{
     font-family: 'Prata', serif;
     color: #ffffff;
 }
 
-.quote{
+.quote-text{
     text-align: center;
-    font-size: 50px;
+    font-size: 2.5vw;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .author{
-    font-size: 25px;
+    text-align: center;
+    font-size: 1.5vw;
+    width: 85%;
+    
 }
+
+/* Voices list - voluntarily hiden, needs to be there for the voiceover option */
+
+#voices-list{
+display: none; 
+background: none;
+color: #ffffff;
+border: none;
+}
+
+/* Play button */
+
+.play-button {
+    display: block;
+    cursor: pointer;
+    position: absolute;    
+    left: 75%;
+    bottom: 32%;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: content-box;
+    width: 32px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 18px 20px 18px 28px;
+  }
+
+
+/* Play button animation */
+
+  .play-button:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+  }
+  
+  .play-button:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: all 200ms;
+  }
+  
+  .play-button span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-left: 32px solid #6096B4 ;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+  }
+  
+  @keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
