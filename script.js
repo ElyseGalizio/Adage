@@ -13,7 +13,7 @@ fetch('https://api.quotable.io/random')
 
 // Save a 'screesnhot' of a div as an image
 function takeScreenshot(){
-  html2canvas(document.querySelector("#text-area")).then(canvas => {
+  html2canvas(document.querySelector("#quote-container")).then(canvas => {
   saveAs(canvas.toDataURL(), 'quote.png');
 });
 }
