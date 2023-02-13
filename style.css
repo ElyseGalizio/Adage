@@ -101,6 +101,12 @@ a {
     
 }
 
+#screen{
+  background-color: black;
+  height: 40px;
+  width: 80px;
+}
+
 /* Voices list - voluntarily hiden, needs to be there for the voiceover option */
 
 #voices-list{

@@ -9,7 +9,6 @@ fetch('https://api.quotable.io/random')
 
 
 
-
 // Voiceover feature (not based on API, but on browser's included voiceover)
 
 // Condition to display the play button only on Chrome because of voices compatibility 

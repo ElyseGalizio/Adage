@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
     <title>Adage</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="/script.js"></script>
   
 </head>
 
@@ -34,8 +36,11 @@
         <a id="play-btn" class="play-button" href="#"><span></span></a>         
     </section>
 
+    <button onclick="takeScreenshot()">Take Screenshot</button>
+
     <select name="voice" id="voices-list"></select>
 
+  
 
     <div class=“features”>
         <div class=“main-functions”>
@@ -87,7 +92,19 @@
             </div>
         </div>
     </div>
+<script>
 
-  <script src="/script.js"></script>
+    function takeScreenshot(){
+
+        html2canvas(document.querySelector("#quote-container")).then(canvas => {
+      document.body.appendChild(canvas)
+    });
+
+    
+
+    }
+
+</script>
+  
 </body>
 </html>
