@@ -11,10 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-    <title>Adage</title>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="/script.js"></script>
-  
+    <title>Adage</title>
 </head>
 
 <body>
@@ -32,77 +31,46 @@
                 <p id="quote-text" class="quote-text"></p>
                 <h2 id="author" class="author"></h2>
             </div>
-        </div>    
+        </div>
+        <img id="download-btn" src="/assets/download.png" onclick="takeScreenshot()" >
         <a id="play-btn" class="play-button" href="#"><span></span></a>         
     </section>
 
-    <button onclick="takeScreenshot()">Take Screenshot</button>
-
     <select name="voice" id="voices-list"></select>
 
-  
 
-    <div class=“features”>
-        <div class=“main-functions”>
-            <div class=“new-quote”>
-                <button class=“new-quote-btn”>
-                    <i class=“fa-regular fa-square-plus”></i>
-                </button>
-            </div>
-            <div class=“cta-like”>
-                <button class=“cta-like-btn”>
-                    <i class=“fa-regular fa-heart”></i>
-                </button>
-            </div>
-            <div class=“cta-download”>
-                <button class=“cta-download-btn”>
-                    <i class=“fa-solid fa-download”></i>
-                </button>
-            </div>
-        </div>
-        <div class=“share-functions”>
-            <!-- to do : find the shareable links specs for each social media channel to put in the empty href section -->
-            <div class=“share-whatsapp”>
-                <button class=“share-whatsapp-btn”>
-                    <i class=“fa-brands fa-whatsapp”></i>
-                </button>
-            </div>
-            <div class=“share-facebook”>
-                <button class=“share-facebook-btn”>
-                    <i class=“fa-brands fa-facebook”></i>
-                </button>
-            </div>
-            <div class=“share-instagram”>
-                <button class=“share-instagram-btn”>
-                    <i class=“fa-brands fa-instagram”></i>
-                </button>
-            </div>
-            <div class=“share-twitter”>
-                <button class=“share-twitter-btn”>
-                    <i class=“fa-brands fa-twitter”></i>
-                </button>
-            </div>
-        </div>
-        <div class=“settings”>
-            <!-- settings details section to be created -->
-            <div class=“change-settings”>
-                <button class=“change-settings-btn”>
-                    <i class=“fa-solid fa-gear”></i>
-                </button>
-            </div>
-        </div>
-    </div>
 <script>
 
     function takeScreenshot(){
-
         html2canvas(document.querySelector("#quote-container")).then(canvas => {
-      document.body.appendChild(canvas)
+        saveAs(canvas.toDataURL(), 'quote.png');
     });
-
-    
-
     }
+
+    function saveAs(uri, filename) {
+
+var link = document.createElement('a');
+
+if (typeof link.download === 'string') {
+
+    link.href = uri;
+    link.download = filename;
+
+    //Firefox requires the link to be in the body
+    document.body.appendChild(link);
+
+    //simulate click
+    link.click();
+
+    //remove the link when done
+    document.body.removeChild(link);
+
+} else {
+
+    window.open(uri);
+
+}
+}
 
 </script>
   

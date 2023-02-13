@@ -9,6 +9,43 @@ fetch('https://api.quotable.io/random')
 
 
 
+// Download quote as image 
+
+// Save a 'screesnhot' of a div as an image
+function takeScreenshot(){
+  html2canvas(document.querySelector("#text-area")).then(canvas => {
+  saveAs(canvas.toDataURL(), 'quote.png');
+});
+}
+
+// Download function
+
+function saveAs(uri, filename) {
+
+var link = document.createElement('a');
+
+if (typeof link.download === 'string') {
+
+link.href = uri;
+link.download = filename;
+
+//Firefox requires the link to be in the body
+document.body.appendChild(link);
+
+//simulate click
+link.click();
+
+//remove the link when done
+document.body.removeChild(link);
+
+} else {
+
+window.open(uri);
+
+}
+}
+
+
 // Voiceover feature (not based on API, but on browser's included voiceover)
 
 // Condition to display the play button only on Chrome because of voices compatibility 
