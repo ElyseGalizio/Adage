@@ -4,3 +4,5 @@ fetch('https://api.quotable.io/random')
     document.getElementById("quote").innerHTML = quotes.content;
     document.getElementById("author").innerHTML = quotes.author;
   })
+
+  

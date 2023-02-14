@@ -1,4 +1,11 @@
-<!-- Create image gallery  -->
+<!-- Create image gallery (either a div, or flex grid container)
+    When user clicks "add to favorites", image is added to the image gallery on the favorites page
+    When more than three images are saved, the first image is large and the rest become thumbnails
+    OR 
+    Images are randomly sorted into a flex grid container
+    User can click on thumbnails to view their favorite quote
+    user can click save from favorites page
+    -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +33,10 @@
     </navbar>
 
     <section id="quotes-section">
-        <div class>
-
+        <div class="favorite-gallery">
+            <h4>Favorites Gallery</h4>
+            <p>See your favorite quotes here</p>
+            <div id="fav-quote"></div>
         </div>
     </section>
     
