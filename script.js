@@ -48,15 +48,6 @@ window.open(uri);
 
 // Voiceover feature (not based on API, but on browser's included voiceover)
 
-// Condition to display the play button only on Chrome because of voices compatibility 
-
-var is_chrome = (typeof window.chrome === "object" && navigator.appVersion.indexOf('Edge') === -1)
-
-if(!is_chrome)
-{
-  document.getElementById("play-btn").style.display = "none";
-}  
-
 // Get the 'play' button
 var button = document.getElementById('play-btn');
 
@@ -75,9 +66,9 @@ function loadVoices() {
   // Loop through each of the voices.
 	voices.forEach(function(voice, i) {
 
-    // Define a condition to select only "Google UK English Male" because it is the most realistic voice. Only work on Chrome!
+    // Define a condition to select only "Karen" voice:
 
-     if (voice.name.includes("Google UK English Male") && voice.lang === ('en-GB')){
+     if (voice.name.includes("Karen")){
      
       // Create a new option element.
       var option = document.createElement('option');
