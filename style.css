@@ -209,7 +209,7 @@ border: none;
     align-items: center;
     flex-direction: column;
     width: 375px;
-    height: 550px;
+    height: 575px;
     background-color: var(--light-blue);
     border-radius: 30px;
     margin: 45px;
