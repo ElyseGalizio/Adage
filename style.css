@@ -37,6 +37,10 @@ a {
     align-items: center;
 }
 
+.nav-icon {
+    display: none;
+}
+
 .nav-img {
     width: 20%;
 }
@@ -84,4 +88,30 @@ a {
 
 .author{
     font-size: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-img {
+        width: 40%;
+    }
+    
+    .nav-link-list {
+        display: none;
+    }
+
+    .navbar a {
+        color: var(--mid-blue);
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    .navbar a.nav-icon {
+        background: var(--eggshell);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }
