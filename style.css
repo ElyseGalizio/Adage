@@ -28,7 +28,7 @@ a {
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    color: var(--mid-blue);
+    color: var(--dark-blue);
 }
 
 .navbar {
@@ -57,7 +57,7 @@ a {
 }
 
 #quote-container {
-    background-color: #6096B4;
+    background-color: var(--mid-blue);
     display:table; /*Put display as a table to extend the container if quote is too long*/
     flex-direction: column;
     align-items: center;
