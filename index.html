@@ -11,8 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="/script.js"></script>
     <title>Adage</title>
 </head>
 
@@ -28,17 +29,27 @@
     <section id="quotes-section">
         <div id="quote-container">
             <div id="text-area">
-                <p id="quote-text" class="quote-text"></p>
+                <p id="quote-text" class="quote-text to-text"></p>
                 <h2 id="author" class="author"></h2>
+                <button class="translate-btn">Translate Text</button>
+               
+
             </div>
         </div>
         <img id="download-btn" src="/assets/download.png" onclick="takeScreenshot()" >
         <a id="play-btn" class="play-button" href="#"><span></span></a>         
     </section>
-
     <select name="voice" id="voices-list"></select>
 
+          <select class="row from"></select>
 
-  
+<section class="translate-feature" >
+        <div class="wrapper">
+        
+        </div>
+       
+</section>
+<script src="/countries.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
