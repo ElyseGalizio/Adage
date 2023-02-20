@@ -1,14 +1,32 @@
-// API Call for the quote
 
-fetch('https://api.quotable.io/random')
-  .then(response => response.json())
-  .then(quotes => {
-    document.getElementById("quote-text").innerHTML = '"' + quotes.content + '"';
-    document.getElementById("author").innerHTML = quotes.author;
-  })
 
-  
+// Function generate quote = API Call for the quote + store all generated quotes
 
+// Initialize an empty array to store quotes
+const generatedQuotes = [];
+
+function generateQuote() {
+  fetch('https://api.quotable.io/random')
+    .then(response => response.json())
+    .then(quotes => {
+      // Create an object to store the quote and author
+      const quoteObj = {
+        content: quotes.content,
+        author: quotes.author
+      };
+      
+      // Push the quote object to the allQuotes array
+      generatedQuotes.push(quoteObj);
+
+      // Update the HTML with the new quote and author
+      document.getElementById("quote-text").innerHTML = '"' + quotes.content + '"';
+      document.getElementById("author").innerHTML = quotes.author;
+    })
+}
+
+// Eventlister for clicking on Generate button
+
+document.getElementById("generate-btn").addEventListener("click", generateQuote);
 
 // Download quote as image 
 // Save a 'screesnhot' of a div as an image
@@ -163,3 +181,4 @@ translateBtn.addEventListener("click", () => {
         toText.setAttribute("placeholder", "Translation");
     });
 });
+
