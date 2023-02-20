@@ -26,9 +26,6 @@ ul {
 
 a {
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: var(--mid-blue);
 }
 
 .navbar {
@@ -52,6 +49,13 @@ a {
     gap: 30px;
 }
 
+.nav-links {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: var(--dark-blue);
+    flex-wrap: nowrap;
+}
+
 
 #quotes-section{
     background-color: #ffffff;
@@ -64,7 +68,7 @@ a {
 }
 
 #quotes-diplay {
-    background-color: #6096B4;
+    background-color: var(--mid-blue);
     height: 40vh;
     width: 70%;
     border-radius: 50px;
@@ -100,7 +104,7 @@ a {
     }
 
     .navbar a {
-        color: var(--mid-blue);
+        color: var(--dark-blue);
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
