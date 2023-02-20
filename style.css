@@ -37,6 +37,10 @@ a {
     align-items: center;
 }
 
+.nav-img {
+    width: 20%;
+}
+
 .nav-link-list {
     display: flex;
     justify-content: space-around;
