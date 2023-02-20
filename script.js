@@ -122,16 +122,15 @@ button.addEventListener('click', function(e) {
 
 
 
-//
+
 // Translate feature
-//
 
 const fromText = document.querySelector(".from-text"),
 toText = document.querySelector(".to-text"),
 exchageIcon = document.querySelector(".exchange"),
 selectTag = document.querySelectorAll("select"),
 icons = document.querySelectorAll(".row i");
-translateBtn = document.querySelector("button"),
+translateBtn = document.getElementById("translate-btn"),
 
 
 // Select language
@@ -145,7 +144,7 @@ selectTag.forEach((tag, id) => {
 });
 
 
-// Translate btn
+// Translate to French btn
 
 translateBtn.addEventListener("click", () => {
     let text = speechMsgInput.innerHTML,
@@ -164,22 +163,3 @@ translateBtn.addEventListener("click", () => {
         toText.setAttribute("placeholder", "Translation");
     });
 });
-
-// Write text
-
-icons.forEach(icon => {
-    icon.addEventListener("click", ({target}) => {
-        if(!fromText.value || !toText.value) return;
-        if(target.classList.contains("fa-copy")) {
-            if(target.id == "from") {
-                navigator.clipboard.writeText(fromText.value);
-            } else {
-                navigator.clipboard.writeText(toText.value);
-            }
-        } 
-    });
-});
-
-// Replace original text by French
-
-
