@@ -41,6 +41,7 @@ function generateQuote() {
       document.getElementById("author").innerHTML = quotes.author;
     })
 }
+generateQuote()
 
 // Eventlister for clicking on Generate button
 
