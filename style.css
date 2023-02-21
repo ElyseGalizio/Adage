@@ -1,30 +1,31 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
 :root {
-    --eggshell: #F9F7F7;
-    --light-blue: #DBE2EF;
-    --mid-blue: #3F72AF;
-    --dark-blue: #112D4E;
+  --eggshell: #F9F7F7;
+  --light-blue: #DBE2EF;
+  --mid-blue: #3F72AF;
+  --dark-blue: #112D4E;
 }
 
 body {
-    background: var(--eggshell);
+  background: var(--eggshell);
 }
 
 h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    color: var(--dark-blue)
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: var(--dark-blue)
 }
 
 ul {
-    list-style-type: none;
-    padding: 0; 
+  list-style-type: none;
+  padding: 0; 
 }
 
 a {
+
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
@@ -33,9 +34,9 @@ a {
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .nav-icon {
@@ -51,10 +52,10 @@ a {
 }
 
 .nav-link-list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
 }
 
 .nav-links {
@@ -79,13 +80,13 @@ a {
 }
 
 #quotes-section{
-    background-color: #ffffff;
-    height: 65vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: #ffffff;
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -105,33 +106,41 @@ a {
     color: #ffffff;
     font-size: 1.6rem;
     line-height: 1.5;
+
 }
 
 #text-area{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .quote-text, .author{
-    font-family: 'Prata', serif;
-    color: #ffffff;
+  font-family: 'Prata', serif;
+  color: #ffffff;
 }
 
 .quote-text{
-    text-align: center;
-    font-size: 2.5vw;
-    width: 85%;
-    margin: 0 auto;
+  text-align: center;
+  font-size: 2.5vw;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .author{
-    font-size: 25px;
+  text-align: center;
+  font-size: 1.5vw;
+  width: 85%;
+}
+
+.languages{
+  display: none;
     text-align: center;
     font-size: 1.5vw;
     width: 85%;
+
 }
 
 
@@ -143,6 +152,7 @@ background: none;
 color: #ffffff;
 border: none;
 }
+
 
 
   @keyframes pulse-border {
@@ -157,6 +167,7 @@ border: none;
   }
  
 .about-section {
+
     background-color: #ffffff;
     height: auto;
     width: 100%;
@@ -170,34 +181,36 @@ border: none;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
 }
 
 .about-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 375px;
-    height: 575px;
-    background-color: var(--light-blue);
-    border-radius: 30px;
-    margin: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 375px;
+  height: 575px;
+  background-color: var(--light-blue);
+  border-radius: 30px;
+  margin: 45px;
 }
 
 .about-img {
-    height: 300px;
-    width: 300px;
-    border-radius: 30px;
+  height: 300px;
+  width: 300px;
+  border-radius: 30px;
 }
 
 .about-name {
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--dark-blue)
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark-blue)
 }
 
 .about-quote {
+
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -206,6 +219,7 @@ border: none;
 }
 
 .main-functions {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,11 +238,13 @@ border: none;
 #download-btn svg,
 #copy-btn svg,
 #play-btn svg {
+
   display: inline-block; /* display SVG as inline-block */
   vertical-align: middle; /* align SVG vertically in the middle */
   fill: currentColor; /* use current text color to fill SVG */
   width: 4em; /* set width of SVG to 1em */
   height: 4em; /* set height of SVG to 1em */
+
 }
 
 
@@ -291,5 +307,6 @@ border: none;
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
 
 }
