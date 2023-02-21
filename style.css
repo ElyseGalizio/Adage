@@ -231,13 +231,17 @@ border: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  background: none;
+  cursor:pointer;
 }
 
 #generate-btn svg,
 #like-btn svg,
 #download-btn svg,
 #copy-btn svg,
-#play-btn svg {
+#play-btn svg,
+#translate-btn svg {
 
   display: inline-block; /* display SVG as inline-block */
   vertical-align: middle; /* align SVG vertically in the middle */
@@ -310,3 +314,31 @@ border: none;
 
 
 }
+
+#recent-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.recent-quote {
+  background-color: var(--light-blue);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  width: 50%;
+}
+
+#recent-quotes h2 {
+  color: var(--mid-blue);
+}
+
+
+
+
+
+

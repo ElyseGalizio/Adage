@@ -18,7 +18,7 @@ function closeMenu() {
 }
 
 
-// Function generate quote = API Call for the quote + store all generated quotes
+// Function generate quote = API Call for the quote + store all 10 recemt generated quotes
 
 // Initialize an empty array to store quotes
 const generatedQuotes = [];
@@ -28,24 +28,34 @@ function generateQuote() {
     .then(response => response.json())
     .then(quotes => {
       // Create an object to store the quote and author
-      const quoteObj = {
+      const quoteObj = { 
         content: quotes.content,
         author: quotes.author
       };
       
-      // Push the quote object to the allQuotes array
+      // Push the quote object to the generatedQuotes array
       generatedQuotes.push(quoteObj);
+
+      // Create a new div element to represent the recent quote
+      const quoteDiv = document.createElement("div");
+      quoteDiv.classList.add("recent-quote");
+      quoteDiv.innerHTML = `<p>"${quoteObj.content}"</p><p>- ${quoteObj.author}</p>`;
+
+      // Get the Recent Quotes div and append the new quote div to it
+      const recentQuotesDiv = document.getElementById("recent-quotes");
+      recentQuotesDiv.appendChild(quoteDiv);
+
+      // Optional: limit the number of recent quotes displayed to 10
+      if (recentQuotesDiv.childElementCount > 10) {
+        recentQuotesDiv.removeChild(recentQuotesDiv.firstElementChild);
+      }
 
       // Update the HTML with the new quote and author
       document.getElementById("quote-text").innerHTML = '"' + quotes.content + '"';
       document.getElementById("author").innerHTML = quotes.author;
-    })
+    });
 }
-generateQuote()
 
-// Eventlister for clicking on Generate button
-
-document.getElementById("generate-btn").addEventListener("click", generateQuote);
 
 // Download quote as image 
 // Save a 'screesnhot' of a div as an image
