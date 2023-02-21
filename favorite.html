@@ -10,33 +10,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <title>Adage</title>
+    </head>
+    
+    
+    <body onload="renderFavoriteQuotes()"> 
+        <nav class="navbar">
+            <a href="index.html" class="nav-home"><img src="logo-blue-nobackground.png" class="nav-img"></a>
+            <ul class="nav-link-list">
+    
+                <li><a href="favorite.html" class="nav-links">My Favorite Quotes</a></li>
+                <li><a href="about.html" class="nav-links">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            </a>
+        </nav>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-    <link rel=“stylesheet” href=“https://kit.fontawesome.com/15661c7c88.css” crossorigin=“anonymous”>
-    <title>My Favorite Quotes</title>
-</head>
-<body>
+        <!-- create empty div for favorite quote text
+            fill div with favorite quote when like button is clicked
+            function to create new div when like button is clicked -->
 
-    <navbar class="navbar">
-        <h3>My Favorite Quotes</h3>
-        <ul class="nav-link-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </navbar>
-
-    <section id="quotes-section">
+    <section class="favorite-section">
         <div class="favorite-gallery">
             <h4>Favorites Gallery</h4>
             <p>See your favorite quotes here</p>
-            <div id="fav-quote"></div>
+            <div id="fav-quote">
+                <div id="favorites-container"></div>
+
+            </div>
         </div>
     </section>
     

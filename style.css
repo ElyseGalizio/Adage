@@ -88,6 +88,15 @@ h4 {
     font-size: 25px;
 }
 
+.favorite-section {
+    background-color: #ffffff;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .favorite-gallery {
     display: flex;
     flex-direction: column;
