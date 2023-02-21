@@ -10,8 +10,8 @@ fetch('https://api.quotable.io/random')
 // Initialize an empty array to store quotes
 const favoriteQuotes = [];
 
+// create function to add quote to array
 function addtoFavorites() {
-  
   const quote = document.getElementById("quote").innerText;
   const author = document.getElementById("author").innerText;
 
@@ -22,10 +22,17 @@ function addtoFavorites() {
 
   favoriteQuotes.push(quoteObject);
   console.log(favoriteQuotes);
-
+  
+  // store in local storage
+  
+  window.localStorage.setItem('quote', JSON.stringify(quoteObject));
+  window.localStorage.setItem('author', JSON.stringify(quoteObject));
 }
 
+
+// create a function which retrieves favorites array from local storage
 function generateFavoriteQuoteCard(quote, author) {
+  window.localStorage.getItem(quote, author);
   document.getElementById("favorites-container").innerHTML += `<div>
   <p class="quote">${quote}</p>
   <h2 class="author">${author}</h2>
@@ -39,6 +46,5 @@ function renderFavoriteQuotes() {
   console.log(favoriteQuotes);
 }
 
-// create function to add quote to array
-// Create a function which injects each quote into favorites page
+// Create a function which injects each quote into favorites page from local storage
 // when favorites page loads, call function which injects each quote into favorites page
