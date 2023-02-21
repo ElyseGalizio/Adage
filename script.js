@@ -5,11 +5,23 @@ fetch('https://api.quotable.io/random')
     document.getElementById("author").innerHTML = quotes.author;
   })
 
-  function toggleNavbar() {
-    const navLinks = document.getElementsByClassName("nav-link-list");
-    if (navLinks.style.display === "none") {
-      navLinks.style.display = "block";
-    } else {
-      navLinks.style.display = "none";
-    }
-  } 
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-link-list");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-links");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
