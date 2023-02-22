@@ -93,13 +93,31 @@ h4 {
     height: auto;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.favorite-gallery {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.fav-quote {
+    color: var(--dark-blue);
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.fav-author {
+    color: var(--dark-blue);
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.favoriteBtn {
+    height: 50px;
+    width: 175px;
+    background-color: var(--dark-blue);
+    color: var(--eggshell);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    border: none;
 }
