@@ -56,6 +56,23 @@ function generateQuote() {
     });
 }
 
+// Copy quote to clipboard using clipboard API
+
+function copyQuote() {
+  const textArea = document.getElementById("text-area");
+  const textToCopy = textArea.innerText;
+  
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      alert("Quote copied to clipboard");
+    })
+    .catch((error) => {
+      console.error("Failed to copy text: ", error);
+    });
+}
+
+
+
 
 // Download quote as image 
 // Save a 'screesnhot' of a div as an image
