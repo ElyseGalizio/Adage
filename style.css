@@ -58,6 +58,12 @@ a {
   gap: 30px;
 }
 
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: var(--dark-blue);
+}
+
 .nav-links {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
@@ -106,7 +112,6 @@ a {
     color: #ffffff;
     font-size: 1.6rem;
     line-height: 1.5;
-
 }
 
 #text-area{
@@ -140,7 +145,6 @@ a {
     text-align: center;
     font-size: 1.5vw;
     width: 85%;
-
 }
 
 
@@ -167,7 +171,6 @@ border: none;
   }
  
 .about-section {
-
     background-color: #ffffff;
     height: auto;
     width: 100%;
@@ -181,7 +184,6 @@ border: none;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-
 }
 
 .about-card {
@@ -210,12 +212,45 @@ border: none;
 }
 
 .about-quote {
-
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: var(--dark-blue);
     text-align: center;
+}
+
+.favorite-section {
+    background-color: #ffffff;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav-quote {
+    color: var(--dark-blue);
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.fav-author {
+    color: var(--dark-blue);
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.favoriteBtn {
+    height: 50px;
+    width: 175px;
+    background-color: var(--dark-blue);
+    color: var(--eggshell);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    border: none;
 }
 
 .main-functions {
@@ -336,6 +371,7 @@ border: none;
 #recent-quotes h2 {
   color: var(--mid-blue);
 }
+
 
 
 

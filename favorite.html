@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <title>Adage</title>
+    </head>
+    
+    
+    <body onload="renderFavoriteQuotes()"> 
+        <nav class="navbar">
+            <a href="index.html" class="nav-home"><img src="logo-blue-nobackground.png" class="nav-img"></a>
+            <ul class="nav-link-list">
+    
+                <li><a href="favorite.html" class="nav-links">My Favorite Quotes</a></li>
+                <li><a href="about.html" class="nav-links">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            </a>
+        </nav>
+
+    <section class="favorite-section">
+        <h2 class="fav-quote" id="fav-click">Click the logo to add your favorite quotes</h2>
+                <div id="favorites-container">
+                    
+                </div>
+            <button class="favoriteBtn" onclick="clearFavorites()">Clear Favorites</button>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
