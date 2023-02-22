@@ -1,7 +1,7 @@
 
 // create function to add quote to array
 function addtoFavorites() {
-  const quote = document.getElementById("quote").innerText;
+  const quote = document.getElementById("quote-text").innerText;
   const author = document.getElementById("author").innerText;
 
   const quoteObject = {
