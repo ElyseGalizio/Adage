@@ -1,0 +1,10 @@
+Overall Feedback:
+
+1. The css is well organised and using mostly clear class names.
+2. I created a .gitignore file to ignore node modules being uploaded to github
+3. There are lots of images outside of the assets folder this needs to be organised.
+4. The HTML files are well structured using the correct HTML tags and reducing any unecessary doe.
+5. Good use of the contries JS file to separate the code and improve the readability.
+6. Overall the JavaScript is well implemented and the use of comments to explain the more complex parts of the code which were brought in from external
+places is really good to see.
+7. Next steps would be to deploy it to Netlify.

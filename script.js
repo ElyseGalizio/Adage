@@ -1,6 +1,7 @@
 
 // create function to add quote to array
 function addtoFavorites() {
+  // Good setup to add the quotes to the array, it is very clear and easy to understand what is happening here
   const quote = document.getElementById("quote-text").innerText;
   const author = document.getElementById("author").innerText;
 
@@ -20,7 +21,7 @@ function addtoFavorites() {
 
 // create a function which retrieves favorites array from local storage and injects into DOM
 
-function generateFavoriteQuoteCard(quote, author) { 
+function generateFavoriteQuoteCard(quote, author) {
   document.getElementById("fav-click").innerHTML = "";
   document.getElementById("favorites-container").innerHTML += `<div>
   <p class="fav-quote">${quote}</p>
@@ -38,19 +39,22 @@ function renderFavoriteQuotes() {
 }
 
 function clearFavorites() {
+  // Here clear is a good option but remove item could also be used if 
+  // you had more than one item in localStorage and did not want to delete it
   window.localStorage.clear();
   document.getElementById("favorites-container").innerHTML = "";
   document.getElementById("fav-click").innerHTML = "Click the logo to add your favorite quotes";
 }
 
+// Great setup here to animate the hamburger menu
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-link-list");
 
 hamburger.addEventListener("click", mobileMenu);
 
 function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
 }
 
 const navLink = document.querySelectorAll(".nav-links");
@@ -58,8 +62,8 @@ const navLink = document.querySelectorAll(".nav-links");
 navLink.forEach(n => n.addEventListener("click", closeMenu));
 
 function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
 }
 
 
@@ -68,16 +72,18 @@ function closeMenu() {
 // Initialize an empty array to store quotes
 const generatedQuotes = [];
 
+// Gret use of comments to help others and ourselves to see what is going on 
+// within this function
 function generateQuote() {
   fetch('https://api.quotable.io/random')
     .then(response => response.json())
     .then(quotes => {
       // Create an object to store the quote and author
-      const quoteObj = { 
+      const quoteObj = {
         content: quotes.content,
         author: quotes.author
       };
-      
+
       // Push the quote object to the generatedQuotes array
       generatedQuotes.push(quoteObj);
 
@@ -106,7 +112,7 @@ function generateQuote() {
 function copyQuote() {
   const textArea = document.getElementById("text-area");
   const textToCopy = textArea.innerText;
-  
+
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
       alert("Quote copied to clipboard");
@@ -121,37 +127,37 @@ function copyQuote() {
 
 // Download quote as image 
 // Save a 'screesnhot' of a div as an image
-function takeScreenshot(){
+function takeScreenshot() {
   html2canvas(document.querySelector("#quote-container")).then(canvas => {
-  saveAs(canvas.toDataURL(), 'quote.png');
-});
+    saveAs(canvas.toDataURL(), 'quote.png');
+  });
 }
 
 // Download function
 
 function saveAs(uri, filename) {
 
-var link = document.createElement('a');
+  var link = document.createElement('a');
 
-if (typeof link.download === 'string') {
+  if (typeof link.download === 'string') {
 
-link.href = uri;
-link.download = filename;
+    link.href = uri;
+    link.download = filename;
 
-//Firefox requires the link to be in the body
-document.body.appendChild(link);
+    //Firefox requires the link to be in the body
+    document.body.appendChild(link);
 
-//simulate click
-link.click();
+    //simulate click
+    link.click();
 
-//remove the link when done
-document.body.removeChild(link);
+    //remove the link when done
+    document.body.removeChild(link);
 
-} else {
+  } else {
 
-window.open(uri);
+    window.open(uri);
 
-}
+  }
 }
 
 
@@ -170,34 +176,34 @@ var voiceSelect = document.getElementById('voices-list');
 // Fetch the list of voices and populate the voice options.
 function loadVoices() {
   // Fetch the available voices.
-	var voices = speechSynthesis.getVoices();
-  
+  var voices = speechSynthesis.getVoices();
+
   // Loop through each of the voices.
-	voices.forEach(function(voice, i) {
+  voices.forEach(function (voice, i) {
 
     // Define a condition to select only "Karen" voice:
 
-     if (voice.name.includes("Karen")){
-     
+    if (voice.name.includes("Karen")) {
+
       // Create a new option element.
       var option = document.createElement('option');
-      
+
       // Set the options value and text.
       option.value = voice.name;
       option.innerHTML = voice.name;
-        
+
       // Add the option to the voice selector.
       voiceSelect.appendChild(option);
-     } 
-      
-	});
+    }
+
+  });
 }
 
 // Execute loadVoices.
 loadVoices();
 
 // Chrome loads voices asynchronously.
-window.speechSynthesis.onvoiceschanged = function(e) {
+window.speechSynthesis.onvoiceschanged = function (e) {
   loadVoices();
 };
 
@@ -206,27 +212,27 @@ window.speechSynthesis.onvoiceschanged = function(e) {
 // the queue.
 function speak(text) {
   // Create a new instance of SpeechSynthesisUtterance.
-	var msg = new SpeechSynthesisUtterance();
-  
+  var msg = new SpeechSynthesisUtterance();
+
   // Set the text.
-	msg.text = text;
-  
+  msg.text = text;
+
   // If a voice has been selected, find the voice and set the
   // utterance instance's voice attribute.
-	if (voiceSelect.value) {
-		msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == voiceSelect.value; })[0];
-	}
-  
+  if (voiceSelect.value) {
+    msg.voice = speechSynthesis.getVoices().filter(function (voice) { return voice.name == voiceSelect.value; })[0];
+  }
+
   // Queue this utterance.
-	window.speechSynthesis.speak(msg);
+  window.speechSynthesis.speak(msg);
 }
 
 
 // Set up an event listener for when the 'speak' button is clicked.
-button.addEventListener('click', function(e) {
-	if (speechMsgInput.innerHTML.length > 0) {
-		speak(speechMsgInput.innerHTML);
-	}
+button.addEventListener('click', function (e) {
+  if (speechMsgInput.innerHTML.length > 0) {
+    speak(speechMsgInput.innerHTML);
+  }
 });
 
 
@@ -235,42 +241,42 @@ button.addEventListener('click', function(e) {
 // Translate feature
 
 const fromText = document.querySelector(".from-text"),
-toText = document.querySelector(".to-text"),
-exchageIcon = document.querySelector(".exchange"),
-selectTag = document.querySelectorAll("select"),
-icons = document.querySelectorAll(".row i");
+  toText = document.querySelector(".to-text"),
+  exchageIcon = document.querySelector(".exchange"),
+  selectTag = document.querySelectorAll("select"),
+  icons = document.querySelectorAll(".row i");
 translateBtn = document.getElementById("translate-btn"),
 
 
-// Select language
+  // Select language
 
-selectTag.forEach((tag, id) => {
+  selectTag.forEach((tag, id) => {
     for (let country_code in countries) {
-        let selected = id == 0 ? country_code == "en-GB" ? "selected" : "" : country_code == "fr-FR" ? "selected" : "";
-        let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
-        tag.insertAdjacentHTML("beforeend", option);
+      let selected = id == 0 ? country_code == "en-GB" ? "selected" : "" : country_code == "fr-FR" ? "selected" : "";
+      let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
+      tag.insertAdjacentHTML("beforeend", option);
     }
-});
+  });
 
 
 // Translate to French btn
 
 translateBtn.addEventListener("click", () => {
-    let text = speechMsgInput.innerHTML,
+  let text = speechMsgInput.innerHTML,
     translateFrom = selectTag[0].value,
     translateTo = selectTag[1].value;
-    if(!text) return;
-    toText.setAttribute("placeholder", "Translating...");
-    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
-    fetch(apiUrl).then(res => res.json()).then(data => {
-        toText.value = data.responseData.translatedText;
-        data.matches.forEach(data => {
-            if(data.id === 0) {
-              document.getElementById("quote-text").innerHTML = data.translation;
-            }
-        });
-        toText.setAttribute("placeholder", "Translation");
+  if (!text) return;
+  toText.setAttribute("placeholder", "Translating...");
+  let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+  fetch(apiUrl).then(res => res.json()).then(data => {
+    toText.value = data.responseData.translatedText;
+    data.matches.forEach(data => {
+      if (data.id === 0) {
+        document.getElementById("quote-text").innerHTML = data.translation;
+      }
     });
+    toText.setAttribute("placeholder", "Translation");
+  });
 });
 
 
